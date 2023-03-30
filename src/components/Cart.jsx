@@ -319,7 +319,7 @@ const Cart = () => {
                       </strong>
                     </div>
                     <span>
-                   {Total.total <= 0 ? <strong> Nan </strong> : <strong>${Total.total + ShippingCharges}</strong> }
+                   {Total.total <= 0 ? <strong> 0 </strong> : <strong>${Total.total + ShippingCharges}</strong> }
                     </span>
                   </li>
                 </ul>

@@ -1,25 +1,61 @@
 // import axios from 'axios'
 // import React, { useEffect, useState } from 'react'
-import React from 'react';
+import React from "react";
+import { Chart } from "react-google-charts";
 
 const OrderList = () => {
-    // const [order, setorder] = useState([])
-    // useEffect(() => {
-    //     axios.get(
-    //         "https://fake-e-commerce-api.onrender.com/orders/5f9f1b9b9b9bb9b9b",
-    //         {
-    //         withCredentials: true,
-    //       }).then((res) => {
-    //         return res.data
-    //       })
-    // }, [])
-    // console.log(order);    
+  const data = [
+    ["State", "Orders"],
+    ["Chhattisgarh", 2000],
+    ["Bihar", 3000],
+    ["Ladakh", 4000],
+    ["Jammu and Kashmir", 800],
+    ["Goa", 600],
+    ["Gujarat", 15000],
+    ["Rajasthan", 1000],
+    ["Kerela", 1500],
+    ["Uttar Pradesh", 2000],
+    ["Maharashtra", 3000],
+    ["Odisha", 4000],
+    ["Tamil Nadu", 5000],
+    ["Telangana", 6000],
+    ["Uttarakhand", 7000],
+    ["West Bengal", 8000],
+    ["Andaman and Nicobar Islands", 9000],
+    ["Chandigarh", 10000],
+    ["Puducherry", 11000],
+    ["Delhi", 12000],
+    ["Madhya Pradesh", 11000],
+    ["Punjab", 110],
+
+  ];
+  // const [order, setorder] = useState([])
+  // useEffect(() => {
+  //     axios.get(
+  //         "https://fake-e-commerce-api.onrender.com/orders/5f9f1b9b9b9bb9b9b",
+  //         {
+  //         withCredentials: true,
+  //       }).then((res) => {
+  //         return res.data
+  //       })
+  // }, [])
+  // console.log(order);
+
+  const options = {
+    width: "auto",
+    region: "IN",
+    resolution: "provinces",
+    displayMode: 'regions',
+    colorAxis: { colors: ["#AFD3FF", "#9AC6FD"] },
+  };
   return (
     <>
-         <h2 style={{marginTop:'60px'}} center >Comeing Soon....</h2>
-                       
-       {/* table for listing order */}
-        {/* <table className="table align-middle mb-0 bg-white" style={{marginTop:'60px'}}>
+      <h2 style={{ marginTop: "60px" }}> We are currently available here.... </h2>
+      <Chart chartType="GeoChart" 
+      data={data} 
+      options={options} />
+      {/* table for listing order */}
+      {/* <table className="table align-middle mb-0 bg-white" style={{marginTop:'60px'}}>
   <thead className="bg-light">
     <tr>
       <th>Name</th>
@@ -133,9 +169,8 @@ const OrderList = () => {
     </tr>
   </tbody>
 </table> */}
-
     </>
-  )
-}
+  );
+};
 
 export default OrderList;

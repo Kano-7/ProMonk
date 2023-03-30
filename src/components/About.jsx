@@ -11,7 +11,7 @@ const About = () => {
   const [topProduct, settopProduct] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);
-    
+
     axios
       .get("https://fake-e-commerce-api.onrender.com/product/limit/9/3")
       .then((res) => {
@@ -24,17 +24,17 @@ const About = () => {
   return (
     <>
       <ToastContainer
-position="top-right"
-autoClose={3000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-/>
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="container ">
         <div className="row flex-lg-row-reverse align-items-center g-5 py-5 ">
           <div className="col-10 col-sm-8 col-lg-6">
@@ -364,11 +364,11 @@ theme="light"
                   <hr />
                   <p className="dark-grey-text mt-4">
                     <i className="fas fa-quote-left pe-2" />
-                    Meet our Co-Founder, the visionary mind behind
-                    Promonk's success in the e-commerce industry. With a passion
-                    for innovation and a strong entrepreneurial spirit, they
-                    have been a driving force in shaping our team and our
-                    company's growth.
+                    Meet our Co-Founder, the visionary mind behind Promonk's
+                    success in the e-commerce industry. With a passion for
+                    innovation and a strong entrepreneurial spirit, they have
+                    been a driving force in shaping our team and our company's
+                    growth.
                   </p>
                 </div>
               </div>

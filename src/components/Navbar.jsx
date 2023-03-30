@@ -51,7 +51,7 @@ function Navbar() {
       navbar.classList.remove("sticky");
     }
   };
-
+   
   return (
     <>
       <>
@@ -134,12 +134,18 @@ function Navbar() {
             {/* Collapsible wrapper */}
             {/* Right elements */}
             <div className="d-flex align-items-center">
+              
+
               <div>
                 <OffCanvasExample />
               </div>
               {/* Icon */}
-              <Link className="nav-link me-3" to="/cart" data-mdb-toggle="tooltip"
-                      title="Go to cart">
+              <Link
+                className="nav-link me-3"
+                to="/cart"
+                data-mdb-toggle="tooltip"
+                title="Go to cart"
+              >
                 <i className="fas fa-shopping-cart" />
               </Link>
               {/* Notifications */}
@@ -150,7 +156,7 @@ function Navbar() {
                   id="navbarDropdownMenuLink"
                   role="button"
                   data-mdb-toggle="dropdown"
-                      title="Notification"
+                  title="Notification"
                   aria-expanded="false"
                 >
                   <i className="fas fa-bell" />

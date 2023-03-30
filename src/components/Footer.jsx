@@ -83,22 +83,22 @@ export default function Footer() {
                   <h6 className="text-uppercase fw-bold mb-4">Products</h6>
                   <p>
                     <a href="#!" className="text-reset">
-                      Angular
+                    Shoes 
                     </a>
                   </p>
                   <p>
                     <a href="#!" className="text-reset">
-                      React
+                    Accessories
                     </a>
                   </p>
                   <p>
                     <a href="#!" className="text-reset">
-                      Vue
+                    Electronics
                     </a>
                   </p>
                   <p>
                     <a href="#!" className="text-reset">
-                      Laravel
+                    Home and kitchen
                     </a>
                   </p>
                 </div>
@@ -134,17 +134,17 @@ export default function Footer() {
                   {/* Links */}
                   <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                   <p>
-                    <i className="fas fa-home me-3" /> New York, NY 10012, US
+                    <i className="fas fa-home me-3" /> Ahemdabad, SG Highway, India
                   </p>
                   <p>
                     <i className="fas fa-envelope me-3" />
-                    info@example.com
+                      support@ProductMonkey.com
                   </p>
                   <p>
-                    <i className="fas fa-phone me-3" /> + 01 234 567 88
+                    <i className="fas fa-phone me-3" /> +91 9408 762 963
                   </p>
                   <p>
-                    <i className="fas fa-print me-3" /> + 01 234 567 89
+                    <i className="fas fa-print me-3" /> +91 9106 633 016
                   </p>
                 </div>
                 {/* Grid column */}
@@ -158,9 +158,9 @@ export default function Footer() {
             className="text-center p-4"
             style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
           >
-            <Link className="text-reset fw-bold" to="/product">
+            <label className="text-reset fw-bold">
               © 2023 Copyright ProMonk, Inc. All rights reserved.
-            </Link>
+            </label>
           </div>
           {/* Copyright */}
         </footer>

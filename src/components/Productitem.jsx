@@ -3,7 +3,11 @@ import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const Productitem = ({ title, discription, imageUrl, id, price, sub }) => {
+import User from "./homecomponents/User";
+import ReactStars from "react-stars";
+const Productitem = ({ title, discription, imageUrl, id, price, sub, data }) => {
+  const tota = data?.rate?.reviews.reduce((acc, obj) => acc + obj.rating, 0);
+      console.log(tota/data?.rate?.reviews.length);
   const addToCart = (id) => {
     console.log("abcd", id);
     axios
@@ -84,6 +88,15 @@ const Productitem = ({ title, discription, imageUrl, id, price, sub }) => {
           <div className="card-body">
             <h5 className="card-title">{title}...</h5>
             <p className="card-text">{discription}...</p>
+            <ReactStars
+                  count={tota/data?.rate?.reviews.length}
+                  size={30}
+                  edit={false}
+                  value={5}
+                  color1={'gray'}
+                  color2={'#ffd700'}
+                  half={true}
+                />
             <Link
               to="/productDetail"
               className="btn  btn-sm btn-primary"

@@ -4,7 +4,7 @@ import { RotatingLines } from "react-loader-spinner";
 import { css } from "@emotion/react";
 import Heading from "./heading/Heading";
 // import HomeBanner from "./homecomponents/HomeBanner";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 export default class Product extends Component {
   //
   constructor() {
@@ -73,6 +73,7 @@ export default class Product extends Component {
                   <Heading />
                 </h5>
                 {/* <HomeBanner/> */}
+                
               </div>
               <div className="row">
                 {this.state.articles.map((elements, index) => {

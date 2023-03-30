@@ -19,6 +19,7 @@ import Profile from "./components/homecomponents/Profile";
 import WishList from "./components/homecomponents/WishList";
 import CheckOut from "./components/homecomponents/CheckOut";
 import OrderList from "./components/homecomponents/OrderList";
+import Products from "./components/Products";
 // import Checkout from "./components/Checkout";
 
  const App = () => {
@@ -36,7 +37,8 @@ import OrderList from "./components/homecomponents/OrderList";
             <Route path="/profile" element={<><Navbar /><Profile/></>} />
             <Route path="/orderList" element={<><Navbar /><OrderList/></>} />
             <Route path="/checkout" element={<><Navbar /><CheckOut/></>} />
-              <Route path="/product" element={<><Navbar /><Product /><Footer/></>} />
+              {/* <Route path="/product" element={<><Navbar /><Product /><Footer/></>} /> */}
+              <Route path="/product" element={<><Navbar /><Products /><Footer/></>} />
               <Route path="/home" element={<><Navbar/><About/><Footer/></>} />
               <Route path="/productDetail" element={<><Navbar/><ProductDetail /><Footer/></>} />
               {/* <Route path="/male" element={<><Navbar/><Male /><Footer/></>} /> */}
