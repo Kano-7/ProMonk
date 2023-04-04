@@ -59,8 +59,21 @@ const ProductDetail = () => {
       });
       setrate('');       
       setview(''); 
+      window.location.reload(true)
       return res.data
-    })
+    }).catch((error) => {
+      toast.warn('you have already submitted the view, Thank you!', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
+    });
+
   }
 
   useEffect(() => {
@@ -92,9 +105,13 @@ pauseOnHover
 theme="light"
 />
       {loading ? (
-        <Spinner />
+        <div style={{
+                paddingLeft: "100px",
+                paddingBottom: "150px",
+                paddingTop: "60px",
+              }}><Spinner /></div>
       ) : (
-        <div className="container mt-5" style={{ paddingTop: "58px" }}>
+        <div className="container mt-5" style={{ paddingTop: "58px"}}>
           {/*Grid row*/}
           <div className="row">
             {/*Grid column*/}

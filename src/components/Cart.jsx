@@ -2,11 +2,14 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
+import Spinner from "./Spinner";
 
 const Cart = () => {
    const [cart, setcart] = useState({});
    const [Total, setTotal] =useState(0);
    const [ShippingCharges, setShippingCharges] = useState(100);
+  const [loading, setloading] = useState(true);
+
    const clearCart = () => {
     window.scrollTo(0,0)
 
@@ -16,7 +19,9 @@ const Cart = () => {
       withCredentials: true,
         },
     ).then((res) => {
+      
       window.location.reload(true)
+      setloading(false)
        return res.data
     })
     toast(" All Items Removed From Cart ",{
@@ -41,6 +46,8 @@ const Cart = () => {
       withCredentials: true,
     }).then((res) => {
       window.location.reload(true)
+      setloading(false)
+
       return res.data
     })
     toast(" One decreased ",{
@@ -58,6 +65,8 @@ const Cart = () => {
     window.scrollTo(0,0)
     
     console.log(id);
+    
+
     axios.post(
       "https://fake-e-commerce-api.onrender.com/cart/increase", 
       {
@@ -66,6 +75,8 @@ const Cart = () => {
       withCredentials: true,
     }).then((res) => {
       window.location.reload(true)
+      setloading(false)
+
       return res.data
     })
     toast(" One Increased ",{
@@ -91,6 +102,8 @@ const Cart = () => {
       withCredentials: true,
     }).then((res) => {
       window.location.reload(true)
+      setloading(false)
+
       return res.data
     })
     toast(" Item Removed From Cart ",{
@@ -118,6 +131,7 @@ const Cart = () => {
         console.log(res.data);
         setcart(res?.data?.products);
         setTotal(res?.data)
+        setloading(false)
       return res.data
     })
     // console.log(cart.products);
@@ -142,7 +156,16 @@ const Cart = () => {
                      pauseOnHover
                      theme="light"
                     />
-    <section className="h-100 gradient-custom">
+
+    {loading ? (
+          <>
+             <div style={{
+                paddingLeft: "100px",
+                paddingBottom: "150px",
+                paddingTop: "60px",
+              }}><Spinner /></div>
+          </>
+        ) : <section className="h-100 gradient-custom">
       <div className="container py-5">
         <div className="row d-flex justify-content-center my-4">
           <div className="col-md-8">
@@ -222,13 +245,14 @@ const Cart = () => {
                             id="form1"
                             min={0}
                             name="quantity"
-                            defaultValue={got.quantity}
-                            type="number"
+                            defaultValue={` Quantity: ${got.quantity}`}
+                            type="text"
                             className="form-control"
+                            disabled={true}
                           />
-                          <label className="form-label" htmlFor="form1">
+                          {/* <label className="form-label" htmlFor="form1">
                             Quantity
-                          </label>
+                          </label> */}
                         </div>
                         <button
                           className="btn btn-primary px-3 ms-2"
@@ -338,6 +362,7 @@ const Cart = () => {
         </div>
       </div>
     </section>
+}
     </>
   );
 };

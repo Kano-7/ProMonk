@@ -69,7 +69,11 @@ const WishList = () => {
                      theme="light"
                     />
       {loading ? (
-        <Spinner />
+        <div style={{
+          paddingLeft: "100px",
+          paddingBottom: "150px",
+          paddingTop: "60px",
+        }}><Spinner /></div>
       ) : (
         <section
           className="h-100 gradient-custom"
@@ -93,7 +97,7 @@ const WishList = () => {
                 </div> */}
                 </div>
 
-                {wishlist.map((elements, index) => {
+                {wishlist.length > 0 ?  wishlist.map((elements, index) => {
                   return (
                     <div className="card rounded-3 mb-4" key={index}>
                       <div className="card-body p-4">
@@ -162,7 +166,7 @@ const WishList = () => {
                       </div>
                     </div>
                   );
-                })}
+                }): <><h3> Your list is empty</h3></>}
               </div>
             </div>
           </div>

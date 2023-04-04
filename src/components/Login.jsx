@@ -168,7 +168,11 @@ pauseOnHover
 theme="light"
 />
       {loading ? (
-        <Spinner />
+       <div style={{
+        paddingLeft: "100px",
+        paddingBottom: "150px",
+        paddingTop: "60px",
+      }}><Spinner /></div>
       ) : (
         <div className="container-fluid">
           <section className="vh-100">

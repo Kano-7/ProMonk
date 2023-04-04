@@ -49,7 +49,7 @@ function Products() {
         pauseOnHover
         theme="light"
       />
-      <div className="container my-5">
+      <div className="container my-5" >
         {loading ? (
           <>
             <div
@@ -79,7 +79,7 @@ function Products() {
                   className="input-group"
                   style={{ marginTop: "30px", marginBottom: "30px" }}
                 >
-                  <div className="form-outline">
+                  <div className="form-outline" >
                     <input
                       type="search"
                       id="form1"

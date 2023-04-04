@@ -6,6 +6,7 @@ import Product from "./Product";
 import axios from "axios";
 import DSCO7713 from "./DSC07713.JPG";
 import { ToastContainer, toast } from "react-toastify";
+import ReactStars from "react-stars";
 const About = () => {
   const userData = JSON.parse(localStorage.getItem("user"));
   const [topProduct, settopProduct] = useState([]);
@@ -109,6 +110,10 @@ const About = () => {
                     src={Value.image}
                     className="card-img-top"
                     alt="Skyscrapers"
+                    style={{   display: 'block',
+                    marginLeft: 'auto',
+                    marginRight: 'auto',
+                    width: '50%', height:'40%' }}
                   />
                   <div className="card-body">
                     <h5 className="card-title">{Value.name}</h5>
@@ -116,6 +121,13 @@ const About = () => {
                       {Value.description.slice(0, 88)}
                     </p>
                   </div>
+                  <ReactStars
+                            count={Value?.rate?.reviews?.rating}
+                            size={30}
+                            edit={false}
+                            value={5}
+                            color2={"#ffd700"}
+                          />
                   <div className="card-footer">
                     <Link
                       to="/productDetail"

@@ -66,6 +66,7 @@ const Gold = () => {
                       id={elements._id}
                       price={elements.price}
                       sub={elements.subcategory}
+                      data={elements}
                     />
                   </div>
                 );

@@ -1,28 +1,68 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import ReactStars from 'react-stars'
-const User= ({Data}) => {
-    //  console.log( Data?.rate?.reviews);
-    //  const tota = Data?.rate?.reviews.reduce((acc, obj) => acc + obj.rating, 0);
-    //   console.log(tota/Data?.rate?.reviews.length);
-    // const total = Data?.rate?.reviews?.rating?.reduce((accumulator, currentValue) => {
-    //     return accumulator + currentValue;
-    //   });
-    //   console.log('abc',total);
+
+import React from "react";
+import ReactStars from "react-stars";
+import { AvatarGenerator } from "random-avatar-generator";
+const User = ({ Data }) => {
+  //  console.log( Data?.rate?.reviews);
+  //  const tota = Data?.rate?.reviews.reduce((acc, obj) => acc + obj.rating, 0);
+  //   console.log(tota/Data?.rate?.reviews.length);
+  // const total = Data?.rate?.reviews?.rating?.reduce((accumulator, currentValue) => {
+  //     return accumulator + currentValue;
+  //   });
+  //   console.log('abc',total);
+  const generator = new AvatarGenerator();
+  const ramImage = generator.generateRandomAvatar();
   return (
     <>
-        <section>
+      <div className="row" style={{height:'450px', overflowY:'scroll'}}>
+        {Data?.rate?.reviews.length > 0 ?
+          Data?.rate?.reviews.map((elements, index) => {
+            return (
+              <div className="col-xl-4 col-lg-6 mb-4">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="d-flex align-items-center">
+                      <img
+                        src={ramImage}
+                        alt=""
+                        style={{ width: 45, height: 45 }}
+                        className="rounded-circle"
+                      />
+                      <div className="ms-3">
+                        <p className="fw-bold mb-1">{elements.name}</p>
+                        <p className="text-muted mb-0">{elements.review}</p>
+                        <p className="text-muted mb-0">
+                          {" "}
+                          <ReactStars
+                            count={elements.rating}
+                            size={30}
+                            edit={false}
+                            value={5}
+                            color2={"#ffd700"}
+                          />
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          }) : (<><h3>no reviews</h3></>)}
+      </div>
+
+      {/* old moving code */}
+      {/* <section>
   <div className="row text-center">
     <div className="col-md-12">
-      {/* Carousel wrapper */}
+      
       <div
         id="carouselBasicExample"
         className="carousel slide carousel-dark"
         data-mdb-ride="carousel"
       >
-        {/* Inner */}
+        
         <div className="carousel-inner">
-          {/* Single item */}
+          
           {Data?.rate?.reviews.length > 0 && Data?.rate?.reviews.map((elements,index)=>{
             return(
                 <div className="carousel-item active" key={index}>
@@ -40,30 +80,18 @@ const User= ({Data}) => {
                   color2={'#ffd700'}
                 />
               </div>
-              {/* <ReactStars
-               count={5}
-                // onChange={ratingChanged}s
-                  size={30}
-                 color2={'#ffd700'} /> */}
+            
             </p>
             
-            {/* <div className="mt-5 mb-4">
-              <img
-                src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
-                className="rounded-circle img-fluid shadow-1-strong"
-                alt="smaple image"
-                width={100}
-                height={100}
-              />
-            </div> */}
+            
             <p className="text-muted mb-0">- {elements.name}</p>
           </div>
             )
          })} 
 
         </div>
-        {/* Inner */}
-        {/* Controls */}
+      
+      
         <button
           className="carousel-control-prev"
           type="button"
@@ -83,14 +111,12 @@ const User= ({Data}) => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      {/* Carousel wrapper */}
+      
     </div>
   </div>
-</section>
-
-
+</section> */}
     </>
-  )
-}
+  );
+};
 
-export default User
+export default User;

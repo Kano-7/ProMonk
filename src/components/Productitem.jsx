@@ -68,7 +68,8 @@ const Productitem = ({ title, discription, imageUrl, id, price, sub, data }) => 
           className="card"
           style={{
             boxShadow: "4px 4px 4px 4px rgba(0, 0, 0, 0.2)",
-            transition: "0.3s",
+            transition: "0.3s"
+            
           }}
         >
           {" "}
@@ -83,7 +84,10 @@ const Productitem = ({ title, discription, imageUrl, id, price, sub, data }) => 
             src={imageUrl}
             className="card-img-top"
             alt="..."
-            style={{ width: "288px", height: "288px" }}
+            style={{   display: 'block',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              width: '50%', height:'40%' }}
           />
           <div className="card-body">
             <h5 className="card-title">{title}...</h5>

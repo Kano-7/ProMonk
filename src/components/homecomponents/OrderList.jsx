@@ -50,10 +50,11 @@ const OrderList = () => {
   };
   return (
     <>
-      <h2 style={{ marginTop: "60px" }}> We are currently available here.... </h2>
+      <div className="container"><h2 style={{ marginTop: "60px" }}> We are currently available here.... </h2>
       <Chart chartType="GeoChart" 
       data={data} 
-      options={options} />
+      options={options} /></div>
+      
       {/* table for listing order */}
       {/* <table className="table align-middle mb-0 bg-white" style={{marginTop:'60px'}}>
   <thead className="bg-light">

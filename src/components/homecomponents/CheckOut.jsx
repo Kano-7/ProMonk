@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 const CheckOut = () => {
+  //https://api.sendinblue.com/v3/emailCampaigns
+  //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
   const [cart, setcart] = useState({});
   const [Total, setTotal] = useState(0);
   const [paymentMethod, setpaymentMethod] = useState('')
@@ -33,9 +35,20 @@ const CheckOut = () => {
         progress: undefined,
         theme: "light",
       });
+      window.location.reload(true)
+       
       return res.data
     }).catch((error) => {
-      alert(error.message)
+      toast.warn('Your Cart is empty Order cant be placed', {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     });
   }
   const radioValueChanged = (e) => {
@@ -131,11 +144,11 @@ const CheckOut = () => {
                   <li className="list-group-item d-flex justify-content-between bg-body-tertiary">
                     <div className="text-success">
                       <h6 className="my-0">Promo code</h6>
-                      <small>EXAMPLECODE</small>
+                      <small>PROCODE</small>
                     </div>
-                    {cart.length > 0 && (
-                      <span className="text-success">−$5</span>
-                    )}
+                    {Total.total > 1500 ? (
+                      <span className="text-success">−$150</span>
+                    ) : <span className="text-success">−$5</span>}
                   </li>
                 )}
                 {cart.length > 0 && (
@@ -147,7 +160,7 @@ const CheckOut = () => {
                 {cart.length > 0 && (
                   <li className="list-group-item d-flex justify-content-between">
                     <span>Total (USD)</span>
-                    <strong>${Total.total - 5 + 100}</strong>
+                   {Total.total > 1500 ? <strong>${Total.total - 150 + 100}</strong> : <strong>${Total.total - 5 + 100}</strong>}
                   </li>
                 )}
               </ul>
