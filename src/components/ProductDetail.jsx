@@ -143,9 +143,9 @@ theme="light"
                 </div>
                 <p className="lead">
                   <span className="me-1">
-                    <del> {data.price * 2} $ </del>
+                    <del> ${data.price * 2}  </del>
                   </span>
-                  <span>{data.price} $</span>
+                  <span>${data.price} </span>
                 </p>
                 <strong>
                   <p style={{ fontSize: 20 }}>{data.name}</p>
@@ -350,7 +350,55 @@ theme="light"
           </div>
           {/*Gri
            */}
+          
            <User Data={data}/>
+           <>
+  <hr />
+  {/*Grid row*/}
+  <div className="row d-flex justify-content-center">
+    {/*Grid column*/}
+    <div className="col-md-6 text-center">
+      <h4 className="my-4 h4">Related Products</h4>
+      <p>
+        Same Offer Applies On Following
+      </p>
+    </div>
+    {/*Grid column*/}
+  </div>
+  {/*Grid row*/}
+  {/*Grid row*/}
+  <div className="row">
+    {/*Grid column*/}
+    <div className="col-lg-4 col-md-12 mb-4">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/11.jpg"
+        className="img-fluid"
+        alt=""
+      />
+    </div>
+    {/*Grid column*/}
+    {/*Grid column*/}
+    <div className="col-lg-4 col-md-6 mb-4">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/12.jpg"
+        className="img-fluid"
+        alt=""
+      />
+    </div>
+    {/*Grid column*/}
+    {/*Grid column*/}
+    <div className="col-lg-4 col-md-6 mb-4">
+      <img
+        src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Products/13.jpg"
+        className="img-fluid"
+        alt=""
+      />
+    </div>
+    {/*Grid column*/}
+  </div>
+  {/*Grid row*/}
+</>
+ <hr/>
         </div>
       )}
     </>

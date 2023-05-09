@@ -23,10 +23,14 @@ function OffCanvasExample({ name, ...props }) {
       </Link>
       <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Fillters Comeing Soon.....</Offcanvas.Title>
+          <Offcanvas.Title>Fillters </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div
+          <div className="row justify-content-start">
+              
+          Comeing Soon.....
+          </div>
+          {/* <div
             className="row justify-content-start"
             id="filter-sort-example-filters"
             data-mdb-auto-filter="true"
@@ -119,16 +123,7 @@ function OffCanvasExample({ name, ...props }) {
             <div className="col-md-8 my-5">
               <div id="select-wrapper-37695" className="select-wrapper">
                 <div className="form-outline">
-                  {/* <input
-                    className="form-control select-input"
-                    type="text"
-                    role="listbox"
-                    aria-multiselectable="false"
-                    aria-disabled="false"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                    readOnly="true"
-                  /> */}
+                  
                   <label
                     className="form-label select-label active"
                     style={{ marginLeft: 0 }}
@@ -144,9 +139,7 @@ function OffCanvasExample({ name, ...props }) {
                     />
                     <div className="form-notch-trailing" />
                   </div>
-                  {/* <div className="form-label select-fake-value active">
-                    Choose category
-                  </div> */}
+                 
                 </div>
                 <select
                   className="select select-initialized"
@@ -162,7 +155,7 @@ function OffCanvasExample({ name, ...props }) {
                 </select>
               </div>
             </div>
-          </div>
+          </div> */}
         </Offcanvas.Body>
       </Offcanvas>
     </>

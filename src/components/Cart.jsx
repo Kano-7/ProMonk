@@ -221,14 +221,14 @@ const Cart = () => {
                       >
                         <i className="fas fa-trash" />
                       </button>
-                      <button
+                      {/* <button
                         type="button"
                         className="btn btn-danger btn-sm mb-2"
                         data-mdb-toggle="tooltip"
                         title="Move to the wish list"
                       >
                         <i className="fas fa-heart" />
-                      </button>
+                      </button> */}
                     </div>
                     <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                       <div className="d-flex mb-4" style={{ maxWidth: 300 }}>
@@ -280,14 +280,14 @@ const Cart = () => {
                 
               </div>
             </div>
-            <div className="card mb-4">
+            {Total.total > 0  && <div className="card mb-4">
               <div className="card-body">
                 <p>
                   <strong>Expected shipping delivery</strong>
                 </p>
-                <p className="mb-0">12.10.2020 - 14.10.2020</p>
+                <p className="mb-0">29.04.2023 - 04.04.2023</p>
               </div>
-            </div>
+            </div>}
             <div className="card mb-4 mb-lg-0">
               <div className="card-body">
                 <p>
@@ -347,15 +347,18 @@ const Cart = () => {
                     </span>
                   </li>
                 </ul>
+                {Total.total > 0  &&
                 <Link to="/checkout">
                 
                 <button
                   type="button"
                   className="btn btn-primary btn-lg btn-block"
+                  // disabled={ ? true : false}
                 >
                   Go to checkout
                 </button>
                 </Link>
+}
               </div>
             </div>
           </div>

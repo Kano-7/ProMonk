@@ -19,7 +19,7 @@ const Heading2 = ({head,sp}) => {
   ]}
   speed={sp}
 //   style={{ fontSize: '2em' }}
-  repeat={Infinity}
+  // repeat={Infinity}
 />
     </>
   )

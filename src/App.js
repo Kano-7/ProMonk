@@ -20,6 +20,8 @@ import WishList from "./components/homecomponents/WishList";
 import CheckOut from "./components/homecomponents/CheckOut";
 import OrderList from "./components/homecomponents/OrderList";
 import Products from "./components/Products";
+import Check from "./components/Check";
+import Invoice from "./components/Invoice";
 // import Checkout from "./components/Checkout";
 
  const App = () => {
@@ -32,11 +34,14 @@ import Products from "./components/Products";
             {/* <Navbar /> */}
             <Routes>
            
-             <Route path="/" element={<Login />}/>            
+             <Route path="/" element={<Login />}/> 
+             {/* <Route path="/invoice" element={<Invoice />}/>             */}
              <Route path="/signup" element={<SignUp />}/>  
             <Route path="/profile" element={<><Navbar /><Profile/></>} />
             <Route path="/orderList" element={<><Navbar /><OrderList/></>} />
-            <Route path="/checkout" element={<><Navbar /><CheckOut/></>} />
+            {/* <Route path="/checkout" element={<><Navbar /><CheckOut/></>} /> */}
+            <Route path="/checkout" element={<><Navbar /><Check/></>} />
+
               {/* <Route path="/product" element={<><Navbar /><Product /><Footer/></>} /> */}
               <Route path="/product" element={<><Navbar /><Products /><Footer/></>} />
               <Route path="/home" element={<><Navbar/><About/><Footer/></>} />

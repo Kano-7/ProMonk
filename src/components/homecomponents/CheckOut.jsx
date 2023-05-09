@@ -2,14 +2,36 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+// import sendgrid from '@sendgrid/mail';
 
 const CheckOut = () => {
   //https://api.sendinblue.com/v3/emailCampaigns
   //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
+  //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
   const [cart, setcart] = useState({});
   const [Total, setTotal] = useState(0);
   const [paymentMethod, setpaymentMethod] = useState('')
   const userData = JSON.parse(localStorage.getItem("user"));
+  const customerEmail = userData.email
+  // const sendConfirmationEmail = () => {
+  //   sendgrid.setApiKey('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');
+
+  //   const msg = {
+  //     to: customerEmail,
+  //     from: 'support@promonk.com',
+  //     subject: 'Order Confirmation',
+  //     text: 'Your order has been confirmed. Thank you for your purchase!',
+  //     html: '<p>Your order has been confirmed. Thank you for your purchase!</p>',
+  //   };
+
+  //   sendgrid.send(msg)
+  //     .then(() => {
+  //       console.log('Confirmation email sent successfully');
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // };
   const palceOrder = (data,method) => {
     let AddressData = data.address.street + data.address.city + data.address.state + data.address.country;
     let Phone = data.phone
@@ -478,7 +500,9 @@ const CheckOut = () => {
                   </div>
                 </div> : ''}
                 <hr className="my-4" /> 
-                <button  className="w-100 btn btn-primary btn-lg" type="button"  onClick={()=>{palceOrder(userData,paymentMethod)}}>
+                <button  className="w-100 btn btn-primary btn-lg" type="button"  onClick={()=>{
+                  // sendConfirmationEmail()
+                  palceOrder(userData,paymentMethod)}}>
                   Place Order
                 </button>
               </form>

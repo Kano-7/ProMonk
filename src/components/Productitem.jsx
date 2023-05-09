@@ -112,9 +112,9 @@ const Productitem = ({ title, discription, imageUrl, id, price, sub, data }) => 
             </Link>
             <span>
               <span className="me-1">
-                <del> {price * 2} $ </del>
+                <del> ${price * 2}  </del>
               </span>
-              <span>{price}$</span>
+              <span>${price}</span>
             </span>
           </div>
           <button

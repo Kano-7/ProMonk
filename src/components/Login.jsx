@@ -188,28 +188,31 @@ theme="light"
                 <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                   <form>
                     {/* Email input */}
-                    <div className="form-outline mb-4">
-                      <input
-                        type="email"
-                        id="form1Example13"
-                        className="form-control form-control-lg"
-                        onChange={email}
-                      />
                       <label className="form-label" htmlFor="form1Example13">
                         Email
                       </label>
+                    <div className="form-outline mb-4" style={{border : '1px solid'}} >
+                      
+                      <input
+                        
+                        type="email"
+                        
+                        className="form-control form-control-lg"
+                        onChange={email}
+                        />
+                    
                     </div>
                     {/* Password input */}
-                    <div className="form-outline mb-4">
+                      <label className="form-label" htmlFor="form1Example23">
+                        Password
+                      </label>
+                    <div className="form-outline mb-4" style={{border : '1px solid'}}>
                       <input
                         type="password"
                         id="form1Example23"
                         className="form-control form-control-lg"
                         onChange={passwor}
                       />
-                      <label className="form-label" htmlFor="form1Example23">
-                        Password
-                      </label>
                     </div>
                     <div className="d-flex justify-content-around align-items-center mb-4">
                       {/* Checkbox */}

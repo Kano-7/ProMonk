@@ -14,9 +14,10 @@ const User = ({ Data }) => {
   const ramImage = generator.generateRandomAvatar();
   return (
     <>
-      <div className="row" style={{height:'450px', overflowY:'scroll'}}>
+       <div>
         {Data?.rate?.reviews.length > 0 ?
-          Data?.rate?.reviews.map((elements, index) => {
+      <div className="row" style={{height:'450px', overflowY:'scroll'}}>
+          {Data?.rate?.reviews.map((elements, index) => {
             return (
               <div className="col-xl-4 col-lg-6 mb-4">
                 <div className="card">
@@ -47,7 +48,10 @@ const User = ({ Data }) => {
                 </div>
               </div>
             );
-          }) : (<><h3>no reviews</h3></>)}
+          }) 
+        }
+      </div>
+          : (<><h3>no reviews</h3></>)}
       </div>
 
       {/* old moving code */}
